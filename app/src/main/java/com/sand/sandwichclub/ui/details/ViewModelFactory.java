@@ -1,13 +1,10 @@
-package com.yassinajdi.sandwichclub.ui.details;
+package com.sand.sandwichclub.ui.details;
 
 import android.app.Application;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
-/**
- * A creator is used to inject the sandwich ID into the ViewModel
- */
 public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
     private final Application mApplication;

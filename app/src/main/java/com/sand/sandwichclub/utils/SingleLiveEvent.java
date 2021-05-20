@@ -1,4 +1,4 @@
-package com.yassinajdi.sandwichclub.utils;
+package com.sand.sandwichclub.utils;
 
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.MutableLiveData;

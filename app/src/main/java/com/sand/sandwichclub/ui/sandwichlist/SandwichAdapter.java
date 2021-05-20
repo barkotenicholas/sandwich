@@ -1,4 +1,4 @@
-package com.yassinajdi.sandwichclub.ui.sandwichlist;
+package com.sand.sandwichclub.ui.sandwichlist;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,17 +10,14 @@ import android.view.ViewGroup;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-import com.yassinajdi.sandwichclub.databinding.ItemSandwichBinding;
-import com.yassinajdi.sandwichclub.model.Sandwich;
-import com.yassinajdi.sandwichclub.utils.GlideApp;
+import com.sand.sandwichclub.databinding.ItemSandwichBinding;
+import com.sand.sandwichclub.model.Sandwich;
+import com.sand.sandwichclub.utils.GlideApp;
 
 import java.util.List;
 
 import timber.log.Timber;
 
-/**
- * @author Yassin Ajdi
- */
 public class SandwichAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final Context mContext;

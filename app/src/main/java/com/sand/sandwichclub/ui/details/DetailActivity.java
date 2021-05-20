@@ -1,4 +1,4 @@
-package com.yassinajdi.sandwichclub.ui.details;
+package com.sand.sandwichclub.ui.details;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.TextViewCompat;
@@ -16,12 +17,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anjlab.android.iab.v3.BillingProcessor;
+import com.anjlab.android.iab.v3.TransactionDetails;
 import com.google.android.flexbox.FlexboxLayout;
-import com.yassinajdi.sandwichclub.R;
-import com.yassinajdi.sandwichclub.databinding.ActivityDetailBinding;
-import com.yassinajdi.sandwichclub.model.Sandwich;
-import com.yassinajdi.sandwichclub.utils.GlideApp;
-import com.yassinajdi.sandwichclub.utils.UiUtils;
+import com.sand.sandwichclub.R;
+import com.sand.sandwichclub.databinding.ActivityDetailBinding;
+import com.sand.sandwichclub.model.Sandwich;
+import com.sand.sandwichclub.utils.GlideApp;
+import com.sand.sandwichclub.utils.UiUtils;
 
 import java.util.List;
 
@@ -29,6 +32,7 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+    private BillingProcessor billingProcessor;
 
     private ActivityDetailBinding mBinding;
 
@@ -36,6 +40,9 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
+        FloatingActionButton floatingActionButton = mBinding.sub;
+
+        setUpsub();
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -50,6 +57,13 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         setupToolbar();
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                billingProcessor.subscribe(DetailActivity.this,"acup");
+
+            }
+        });
 
         SandwichViewModel mViewModel = obtainViewModel(this, position);
 
@@ -62,6 +76,30 @@ public class DetailActivity extends AppCompatActivity {
                 } else {
                     closeOnError();
                 }
+            }
+        });
+    }
+
+    private void setUpsub() {
+        billingProcessor = new BillingProcessor(this,"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAimYOGnBuxZXnU5GCiXsaWdSFW3ToKhiEOB25l1GvbGAVKdOksfAfkWFbi3aFz39Xpl61Ef7K/0kmUcb2yYBA4olyW8rFhlpRtIi1s4oIm1ZIaWUZ730jnejctr8XWVEFFCtnLbh9gS1wuzB4txu5xM1mjs3rQAZ1jO7NL96s1wwoFm30a9iNPxsUcEHTF/Dho+ufvXKnAGu8/SqVm3erQFzL0sTST/AY4Yw4o2ViDxqqe2l69GlJgYu9T7ccf/ZahQM25bS4v71iD5LrRMwQjDc4528UbWn6iqJCsKeS8cCICc3Oj5CLTJ/Pb12DbvfKkbdf0/LwQpn8HDguH9zhCQIDAQAB" , null, new BillingProcessor.IBillingHandler() {
+            @Override
+            public void onProductPurchased(String productId, TransactionDetails details) {
+
+            }
+
+            @Override
+            public void onPurchaseHistoryRestored() {
+
+            }
+
+            @Override
+            public void onBillingError(int errorCode, Throwable error) {
+
+            }
+
+            @Override
+            public void onBillingInitialized() {
+
             }
         });
     }

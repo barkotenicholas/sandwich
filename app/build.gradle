@@ -49,4 +49,6 @@ dependencies {
 
     // For logging
     implementation 'com.jakewharton.timber:timber:4.7.0'
+
+    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
 }

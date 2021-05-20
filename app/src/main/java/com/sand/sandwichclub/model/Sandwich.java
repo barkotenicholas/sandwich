@@ -1,4 +1,4 @@
-package com.yassinajdi.sandwichclub.model;
+package com.sand.sandwichclub.model;
 
 import java.util.List;
 
@@ -11,9 +11,6 @@ public class Sandwich {
     private String image;
     private List<String> ingredients = null;
 
-    /**
-     * No args constructor for use in serialization
-     */
     public Sandwich() {
     }
 

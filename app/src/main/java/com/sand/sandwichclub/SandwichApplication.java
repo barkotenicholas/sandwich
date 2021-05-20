@@ -1,4 +1,4 @@
-package com.yassinajdi.sandwichclub;
+package com.sand.sandwichclub;
 
 import android.app.Application;
 

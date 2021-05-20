@@ -1,8 +1,8 @@
-package com.yassinajdi.sandwichclub.utils;
+package com.sand.sandwichclub.utils;
 
 import android.support.annotation.NonNull;
 
-import com.yassinajdi.sandwichclub.model.Sandwich;
+import com.sand.sandwichclub.model.Sandwich;
 
 import org.json.JSONArray;
 import org.json.JSONException;

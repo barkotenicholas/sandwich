@@ -1,4 +1,4 @@
-package com.yassinajdi.sandwichclub.utils;
+package com.sand.sandwichclub.utils;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,7 +7,7 @@ import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
-import com.yassinajdi.sandwichclub.R;
+import com.sand.sandwichclub.R;
 
 @GlideModule
 public class AppGlideModuleHelper extends AppGlideModule {

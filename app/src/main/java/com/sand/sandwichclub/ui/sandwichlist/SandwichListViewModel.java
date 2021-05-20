@@ -1,4 +1,4 @@
-package com.yassinajdi.sandwichclub.ui.sandwichlist;
+package com.sand.sandwichclub.ui.sandwichlist;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
@@ -7,11 +7,11 @@ import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.yassinajdi.sandwichclub.R;
-import com.yassinajdi.sandwichclub.model.Sandwich;
-import com.yassinajdi.sandwichclub.utils.AppExecutors;
-import com.yassinajdi.sandwichclub.utils.JsonUtils;
-import com.yassinajdi.sandwichclub.utils.SingleLiveEvent;
+import com.sand.sandwichclub.R;
+import com.sand.sandwichclub.model.Sandwich;
+import com.sand.sandwichclub.utils.AppExecutors;
+import com.sand.sandwichclub.utils.JsonUtils;
+import com.sand.sandwichclub.utils.SingleLiveEvent;
 
 import org.json.JSONException;
 

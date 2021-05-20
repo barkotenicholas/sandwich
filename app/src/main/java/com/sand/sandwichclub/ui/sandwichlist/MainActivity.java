@@ -1,4 +1,4 @@
-package com.yassinajdi.sandwichclub.ui.sandwichlist;
+package com.sand.sandwichclub.ui.sandwichlist;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -11,9 +11,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.yassinajdi.sandwichclub.ui.details.DetailActivity;
-import com.yassinajdi.sandwichclub.R;
-import com.yassinajdi.sandwichclub.model.Sandwich;
+import com.sand.sandwichclub.ui.details.DetailActivity;
+import com.sand.sandwichclub.R;
+import com.sand.sandwichclub.model.Sandwich;
 
 import java.util.ArrayList;
 import java.util.List;
